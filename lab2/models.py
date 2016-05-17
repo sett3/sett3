@@ -14,9 +14,11 @@ class Discography(models.Model):
     year = models.PositiveIntegerField()
     songs = models.PositiveIntegerField()
 
+    def __str__(self):
+        return self.album
 
 class Clipography(models.Model):
     song = models.CharField(max_length=30)
-    album = models.CharField(max_length=30)
+    album = models.ForeignKey(Discography)
     date = models.PositiveIntegerField()
     director = models.CharField(max_length=30)
