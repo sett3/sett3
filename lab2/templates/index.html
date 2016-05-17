@@ -1,0 +1,149 @@
+﻿<!DOCTYPE html>
+
+<html>
+
+	<head>
+
+		<meta charset="utf-8" />
+
+		<title></title>
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+	</head>
+	<body>
+
+        <div class="container">
+
+            <h1 style="text-align:center;">Лабораторная работа №2</h1>
+
+
+            <h2 style="text-align:center;">Группа Miss May I</h2>
+
+            <big>Участники</big>
+
+            <table class="table table-striped">
+
+                <thead>
+
+                <tr>
+
+                  <th>Имя</th>
+
+                  <th>Фамилия</th>
+
+                  <th>Инструмент</th>
+                  <th>Вокал</th>
+                
+                </tr>
+
+                </thead>
+
+                <tbody>
+
+                    {% for member in members_list %}
+
+                        <tr>
+                            <td>{{member.name}}</td>
+
+                            <td>{{member.surname}}</td>
+
+                            <td>{{member.instrument}}</td>
+                            <td>{{member.vocal}}</td>
+
+                        </tr>
+
+                    {% endfor %}
+
+                </tbody>
+
+            </table>
+
+            <big>Клипография</big>
+
+            <table class="table table-striped">
+
+                <thead>
+
+                    <tr>
+
+                        <th>Песня</th>
+
+                        <th>Альбом</th>
+
+                        <th>Год выхода</th>
+
+                        <th>Постановщик</th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody>
+                    {% for clip in clips_list %}
+
+                    <tr>
+                        <td>{{clip.song}}</td>
+
+                        <td>{{clip.album}}</td>
+
+                        <td>{{clip.date}}</td>
+
+                        <td>{{clip.director}}</td>
+
+                    </tr>
+
+                    {% endfor %}
+
+                </tbody>
+
+            </table>
+
+            <big>Дискография</big>
+
+            <table class="table table-striped">
+
+                <thead>
+
+                    <tr>
+
+                        <th>Альбом</th>
+
+                        <th>Жанр</th>
+
+                        <th>Год</th>
+
+                        <th>Число песен</th>
+
+
+                    </tr>
+
+                </thead>
+
+                <tbody>
+                    {% for disc in discs_list %}
+
+                    <tr>
+                        <td>{{disc.album}}</td>
+
+                        <td>{{disc.genre}}</td>
+
+                        <td>{{disc.year}}</td>
+
+                        <td>{{disc.songs}}</td>
+                    </tr>
+
+                    {% endfor %}
+                </tbody>
+
+            </table>
+
+        </div>
+
+	</body>
+
+</html>
